@@ -1,0 +1,44 @@
+.profile_info {
+    display: flex;
+    padding: 4em 0;
+    background-color: aliceblue;
+}
+
+.profile a{
+    background-color: #0CC0E4;
+    border: solid 2px #0CC0E4;
+    margin-top: 2em;
+}
+
+.profile a:hover{
+    background-color: #fff;
+    color: #0CC0E4;
+}
+
+.profile_container {
+    width: 32%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_container input {
+   display: none;
+}
+
+.profile form {
+    width: 60%;
+}
+
+@media screen and (max-width: 640px) {
+    .profile_info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile_container {
+        width: 80%;
+    }
+    .profile form {
+        width: 80%;
+    }
+}

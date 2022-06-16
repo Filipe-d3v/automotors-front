@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+.form_control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.form_control label {
+    margin-bottom: .3em;
+    font-weight: bold;
+    font-size: .8em;
+}
+
+.form_control input {
+    padding: .5em;
+    border: solid 1px #777;
+    border-radius: 3px;
+}
+
+.form_control input::placeholder {
+    color: #7b7b7b;
+}
+
+.form_control input{
+    font-family: 'Secular One', sans-serif;
+}

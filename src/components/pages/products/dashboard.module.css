@@ -1,0 +1,127 @@
+.productlist_header {
+    right: 20px;
+    margin-bottom: 2em;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.productlist_header a {
+    text-decoration: none;
+    background-color: #fff;
+    color: #16479d;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s;
+    padding: .5em .8em;
+    border-radius: 5px;
+    border: 2px solid #16479d;
+}
+
+.productlist_header a:hover {
+    background-color: #16479d;
+    color: #fff;
+}
+
+.productlist_container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3em;
+}
+
+.productlist_row {
+    border-bottom: 1px solid #16479d;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.productlist_row img {
+    margin-right: 1em;
+}
+
+.productlist_row span {
+    min-width: 100px;
+}
+
+.actions {
+    margin-left: auto;
+}
+
+.actions a {
+    text-decoration: none;
+    background-color: #fff;
+    color: #bb00d8;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s;
+    padding: .5em 1em;
+    border-radius: 5px;
+    border: 2px solid #bb00d8;
+    font-size: 12px;
+    margin-left: 1em;
+}
+
+.actions button {
+    text-decoration: none;
+    background-color: #fff;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s;
+    padding: .5em 1em;
+    border-radius: 5px;
+    border: 2px solid red;
+    font-size: 12px;
+    margin-left: 1em;
+}
+
+.actions a:hover {
+    background-color: #bb00d8;
+    color: #fff;
+}
+
+.actions button:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.actions .finish_btn {
+    color: #25b456;
+    border-color: #25b456;
+}
+
+.actions .finish_btn:hover {
+    color: #fff;
+    background-color: #25b456;
+}
+
+.product_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product_info span {
+    font-weight: bold;
+    color: #00b39b;
+}
+
+.product_info p {
+    font-size: small;
+    font-weight: bold;
+    padding-bottom: 2px;
+    color: #16479d;
+}
+
+@media screen and (max-width: 640px) {
+    .productlist_row{
+        flex-direction: column;
+        text-align: center;
+    }
+    .actions{
+        margin: 5px 0;
+
+    }
+}

@@ -1,0 +1,23 @@
+.footer {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEE;
+    color: #444;
+    border-top: 1px solid #666;
+}
+
+.socials a{
+    color: #233;
+    font-size: 30px;
+    padding: .1em;
+    margin: 0 .3em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

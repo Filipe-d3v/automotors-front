@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0, 8, 24);
+    color: #fff;
+    box-shadow: 0px 8px 12px 1px rgba(0, 0, 0, 0.78);
+    padding: .2em 0;
+    position: fixed;
+    width: 100%;
+}
+
+.nav h4 {
+    font-family: 'Press Start 2P';
+}
+
+.nav_logo {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.nav_logo p {
+    font-size: 30px;
+    vertical-align: bottom;
+    margin-left: 10px;
+}
+
+.nav_logo img {
+    width: 55px;
+    height: 55px;
+    margin: 0 20px;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.nav li,
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s;
+    padding: 0.5em 0.8em;
+    border-radius: 5px;
+}
+
+.nav li:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.nav li:hover>a {
+    color: #fff;
+}
+
+.nav p {
+    font-size: 40px;
+    display: flex;
+    margin-top: 6px;
+    margin-right: 20px;
+    display: none;
+    cursor: pointer;
+    position: fixed;
+}
+
+.menu_side {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: black;
+    width: 0px;
+    height: 100%;
+    margin-top: 61px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu_side i {
+    color: #fff;
+    font-size: 35px;
+    text-align: end;
+    cursor: pointer;
+}
+
+.menu_side ul li {
+    padding: 10px 0;
+}
+
+
+@media screen and (max-width: 650px) {
+    .nav ul {
+      display: none;
+    }
+    .nav p {
+        display: block;
+    }
+  }

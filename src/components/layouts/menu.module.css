@@ -1,0 +1,13 @@
+.menu {
+    width: 0px;
+    background-color: #333;
+    left: 0;
+    height: 100%;
+    position: fixed;
+    padding-top: 80px;
+    transition: .5s;
+}
+
+.menu ul li a {
+    display: none;
+}

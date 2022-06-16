@@ -1,0 +1,118 @@
+.product_datails_container {
+    text-align: center;
+}
+
+.product_datails_container p {
+    margin-bottom: 1em;
+}
+
+.product_datails_header {
+    margin-bottom:  2em;
+}
+
+.product_images {
+    flex-direction: column;
+    margin-left: 20px;
+    width: 150px;
+    border: solid 1px #d6d6d6;
+    padding: 5px;
+    height: 370px;
+    overflow-x: hidden;
+}
+
+.product_images::-webkit-scrollbar{
+    background-color: rgb(211, 211, 211);
+     border-radius: 20px;
+     width: 7px;
+ }
+ .product_images::-webkit-scrollbar-thumb{
+     background: #444;
+     border-radius: 20px;
+ }
+
+.product_images img{
+    max-height: 200px;
+    margin: 2px;
+    border-radius: 2px;
+}
+
+.product_images img:hover {
+    transition: .2s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.product_datails_container button {
+    text-decoration: none;
+    background-color: #25b456;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s;
+    padding: .5em 2em;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1em;
+    margin-left: 1em;
+    max-width: 200px;
+    min-height: 2.5em;
+}
+
+.product_datails_container button:hover {
+    background-color: #1c8a42;
+}
+
+.produc_info button {
+    bottom: 0;
+    margin: auto;
+}
+
+.product_galeria {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal img {
+    max-height: 400px;
+    max-width: 500px;
+    margin: 0 5px;
+}
+
+@media screen and (max-width: 700px) {
+    .product_images{
+        width: 100px;
+        height: 253px;
+    }
+    .modal img{
+        max-width: 350px;
+        max-height: 250px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .product_images{
+        flex-direction: row;
+        height: 100px;
+        width: 100%;
+        margin-bottom: 10px;
+        overflow-y: hidden;
+        margin-left: 0;
+    }
+    .product_galeria{
+        flex-direction: column;
+    }
+    .product_images::-webkit-scrollbar{
+        background-color: rgb(211, 211, 211);
+         border-radius: 20px;
+         height: 20px;
+     }
+     .product_images::-webkit-scrollbar-thumb{
+         background: #444;
+         border-radius: 20px;
+     }
+     .modal img{
+         width: 100%;
+     }
+}
