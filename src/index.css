@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
 
 * {
   padding: 0;
@@ -8,10 +8,10 @@
 }
 
 h1 {
-  color: rgb(12, 7, 85);
+  color: #000000;
   margin-bottom: 1em;
   font-size: 2.1em;
-  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Reggae One', cursive;
 }
 
 

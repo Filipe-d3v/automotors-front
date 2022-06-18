@@ -117,8 +117,11 @@
 
 @media screen and (max-width: 640px) {
     .productlist_row{
+        display: flex;
         flex-direction: column;
         text-align: center;
+        justify-content: center;
+        align-items: center;
     }
     .actions{
         margin: 5px 0;

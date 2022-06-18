@@ -22,6 +22,7 @@ function Home() {
             <Painel />
         </section>
             <section>
+                <h2>Veículos a venda</h2>
                 <div className={Styles.product_container}>
                     {products.length > 0 && (
                         products.map((product) => (

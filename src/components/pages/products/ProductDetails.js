@@ -4,6 +4,9 @@ import useFlashMessage from '../../../hooks/useFlashMessage'
 import api from '../../../utils/api'
 import Styles from './productDetails.module.css'
 
+import { TextareaAutosize, TextField } from '@mui/material'
+import Input from '../../forms/Input'
+
 
 function ProductDetails() {
     const [product, setProduct] = useState({})
@@ -48,38 +51,76 @@ function ProductDetails() {
         })
     }
 
+    function handleChange(e) {
+        setProduct({ ...product, [e.target.name]: e.target.value })
+    }
+
     return (
         <>
             {product.name && (
                 <section className={Styles.product_datails_container}>
                     <div className={Styles.product_datails_header}>
                         <h1>{product.name}</h1>
-                        <p style={{ color: '#000' }}>Se interessou? Entre em contato com {product.user.name}</p>
                     </div>
                     <div className={Styles.product_galeria}>
-                        <div className={Styles.product_images}>
-                            {product.images.map((image, index) => (
-                                <img className='small_img'
-                                    src={`${process.env.REACT_APP_API}/images/products/${image}`}
-                                    alt={product.name}
-                                    key={index}
-                                />
-                            ))}
+                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                            <div className={Styles.product_images}>
+                                {product.images.map((image, index) => (
+                                    <img className='small_img'
+                                        src={`${process.env.REACT_APP_API}/images/products/${image}`}
+                                        alt={product.name}
+                                        key={index}
+                                    />
+                                ))}
+                            </div>
+
+                            <div className={Styles.modal}>
+                                <img id='modal_img' src={`${process.env.REACT_APP_API}/images/products/${product.images[0]}`} alt={product.name} />
+                            </div>
                         </div>
 
-                        <div className={Styles.modal}>
-                            <img id='modal_img' src={`${process.env.REACT_APP_API}/images/products/${product.images[0]}`} alt={product.name} />
+                        <div className={Styles.product_details_info}>
+
+                            <h4>Descrição:</h4>
+                            <TextareaAutosize
+                                disabled='true'
+                                minRows='4'
+                                handleOnChange={handleChange}
+                                value={product.description || ''}
+                            />
+                            <br />
+                            <TextField 
+                                size='small'
+                                label='Documentação e Km rodado '
+                                disabled='true'
+                                handleChange={handleChange}
+                                value={product.documents + "   " + product.kms}
+                            /><br />
+                            <TextField
+                                size='small'
+                                label='Cidade'
+                                disabled='true'
+                                handleChange={handleChange}
+                                value={product.city + "  " + product.uf}
+                            /><br />
+                            <TextField
+                                size='small'
+                                label='Motor'
+                                disabled='true' 
+                                handleChange={handleChange}
+                                value={product.motor + "  " + product.fuel}
+                            /> <br />
+                            <TextField
+                                size='small'
+                                label='Vrlor R$'
+                                disabled='true' 
+                                handleChange={handleChange}
+                                value={product.price}
+                            /><br />
                         </div>
 
                     </div>
                     <div className={Styles.product_info}>
-                        <p>
-                            <span className='bold'>R$:</span> {product.price}
-                        </p>
-                        {token ?
-                            <button onClick={reserve}>Reservar</button> :
-                            <p>É necessário <Link to='/register'> criar uma conta </Link> para contatar!</p>
-                        }
                     </div>
 
                 </section>

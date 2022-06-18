@@ -28,20 +28,20 @@ function ProductForm({ handleSubmit, producData, btnText }) {
 
     }
 
-    const buscarCEP = async() => {
-        const cep = document.getElementById('cep').value
-        const url = `http://viacep.com.br/ws/${cep}/json/`
+    // const buscarCEP = async() => {
+    //     const cep = document.getElementById('cep').value
+    //     const url = `http://viacep.com.br/ws/${cep}/json/`
 
-        const dados = await fetch(url)
-        const endereco = await dados.json()
-        setForm(endereco)
-    }
+    //     const dados = await fetch(url)
+    //     const endereco = await dados.json()
+    //     setForm(endereco)
+    // }
     
         
-        let cep = document.getElementById('cep')
-        if(cep){
-            cep.addEventListener('focusout', buscarCEP)
-        } 
+    //     let cep = document.getElementById('cep')
+    //     if(cep){
+    //         cep.addEventListener('focusout', buscarCEP)
+    //     } 
         
    
     return (

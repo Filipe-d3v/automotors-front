@@ -18,9 +18,10 @@
 }
 
 .painel h3 {
-    font-family: 'Cookie', cursive;
+    font-family: 'Cookie';
     font-size: 60px;
     color: rgb(2, 129, 129);
+    font-weight: 100;
 }
 
 .painel img {

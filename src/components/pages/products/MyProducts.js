@@ -61,7 +61,7 @@ function MyProducts() {
     return (
         <section>
             <div className={Styles.productlist_header}>
-                
+
                 <Link to="/product/add">Cadastrar Produto</Link>
             </div>
             <div className={Styles.productlist_container}>
@@ -81,18 +81,12 @@ function MyProducts() {
                                 <p>Km: {product.kms}</p>
                                 <p>Doc: {product.documents}</p>
                             </div>
+
                             <div className={Styles.actions}>
-                                {product.available ? (<>
-                                    {product.buyer &&
-                                        <button className={Styles.finish_btn} onClick={() => {
-                                            finishSold(product._id)
-                                        }}>
-                                            Finalizar venda
-                                        </button>}
-                                    <Link to={`/product/edit/${product._id}`}>Editar</Link>
-                                    <button onClick={() => { removeProduct(product._id) }}>Remover</button>
-                                </>) : <p>Disponível</p>}
+                                <Link to={`/product/edit/${product._id}`}>Editar</Link>
+                                <button onClick={() => { removeProduct(product._id) }}>Remover</button>
                             </div>
+                            
                         </div>
                     ))}
                 {products.length === 0 && <p>Nenhum Produto cadastrado</p>}
