@@ -2,13 +2,14 @@
 
 .nav {
     display: flex;
-    justify-content: space-between;
     background-color: rgb(0, 8, 24);
     color: #fff;
     box-shadow: 0px 8px 12px 1px rgba(0, 0, 0, 0.78);
     padding: .2em 0;
-    position: fixed;
     width: 100%;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
 }
 
 .nav h4 {
@@ -18,19 +19,17 @@
 .nav_logo {
     display: flex;
     align-items: center;
-    margin-left: 40px;
 }
 
 .nav_logo p {
     font-size: 30px;
     vertical-align: bottom;
-    margin-left: 10px;
 }
 
 .nav_logo img {
     width: 55px;
     height: 55px;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 .nav ul {
@@ -65,19 +64,17 @@ a {
     margin-right: 20px;
     display: none;
     cursor: pointer;
-    position: fixed;
 }
 
 .menu_side {
     display: flex;
-    flex-direction: column;
     position: fixed;
     background-color: black;
-    width: 0px;
-    height: 100%;
-    margin-top: 61px;
+    width: 100%;
+    height: 0px;
     overflow: hidden;
     transition: .5s;
+    margin-top: 60px;
 }
 
 .menu_side i {
@@ -87,8 +84,17 @@ a {
     cursor: pointer;
 }
 
+.menu_side ul {
+    padding-top: 30px;
+}
+
 .menu_side ul li {
     padding: 10px 0;
+}
+
+[data-icon='icon'] {
+    display: flex;
+    
 }
 
 
@@ -98,5 +104,8 @@ a {
     }
     .nav p {
         display: block;
+    }
+    .nav {
+        justify-content: start;
     }
   }

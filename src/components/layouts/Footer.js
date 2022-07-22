@@ -13,10 +13,10 @@ function Footer(){
             </p>
             <br />
             <p>
-                <span className='bold'>Created by Filipe-d3v</span>
+                <span className='bold'>Created by Filipe Pereira da Silva</span>
                 <br></br>
                 <br></br>
-                <span className='bold'>AutoMotors</span> &copy; 2022
+                &copy; 2022 <span className='bold'>AutoMotors</span>
             </p>
             </div>
         </footer>

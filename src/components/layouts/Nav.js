@@ -6,7 +6,7 @@ import Styles from './nav.module.css'
 import Logo from '../../assets/pistao.png'
 import { FaUser } from 'react-icons/fa'
 import { MdLogout } from 'react-icons/md'
-import { MdMenu, MdClose } from 'react-icons/md'
+import { IoMenu, IoClose } from 'react-icons/io5'
 
 import { Context } from '../../context/UserContext'
 
@@ -14,21 +14,22 @@ function Nav() {
     const { authenticated, logout } = useContext(Context)
 
     function Open() {
-        document.getElementById('menuSide').style.width = '200px'
+        document.getElementById('menuSide').style.height = '150px'
         document.getElementById('list').style.display = 'block'
     }
     function Close() {
-        document.getElementById('menuSide').style.width = '0px'
+        document.getElementById('menuSide').style.height = '0px'
         document.getElementById('list').style.display = 'none'
     }
     return (
         <>
             <nav className={Styles.nav}>
+            <p id='menu' onClick={Open}><IoMenu /></p>
                 <div className={Styles.nav_logo}>
                     <img src={Logo} alt='AutoMotors' />
                     <h4>AutoMotors</h4>
                 </div>
-                <p id='menu' onClick={Open}><MdMenu /></p>
+                
                 <ul>
                     <li>
                         <Link to='/'>HOME</Link>
@@ -56,7 +57,7 @@ function Nav() {
                 </ul >
             </nav >
             <div id='menuSide' className={Styles.menu_side}>
-                <i onClick={Close}><MdClose /></i>
+                <i onClick={Close}><IoClose /></i>
                 <ul id='list'>
                     <li onClick={Close}>
                         <Link to='/'>HOME</Link>

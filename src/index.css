@@ -14,9 +14,14 @@ h1 {
   font-family: 'Reggae One', cursive;
 }
 
-
 .bold {
   font-weight: bold;
   color: #555;
   font-size: 15px;
+}
+
+@media screen and (max-width: 640px) {
+    h1 {
+      font-size: 1.5em;
+    }
 }

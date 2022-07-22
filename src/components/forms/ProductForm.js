@@ -1,8 +1,10 @@
 import { useState } from 'react';
 
-import Input from './Input';
 import FormStyles from './form.module.css';
 import Styles from './productForm.module.css';
+
+import { Button, TextareaAutosize, TextField } from '@mui/material'
+import {IoCamera} from 'react-icons/io5'
 
 function ProductForm({ handleSubmit, producData, btnText }) {
     const [product, setProduct] = useState(producData || {})
@@ -22,130 +24,125 @@ function ProductForm({ handleSubmit, producData, btnText }) {
         handleSubmit(product)
     }
 
-    const setForm = async(endereco) => {
-        document.getElementById('cidade').value = endereco.localidade
-        document.getElementById('uf').value = endereco.uf
 
-    }
-
-    // const buscarCEP = async() => {
-    //     const cep = document.getElementById('cep').value
-    //     const url = `http://viacep.com.br/ws/${cep}/json/`
-
-    //     const dados = await fetch(url)
-    //     const endereco = await dados.json()
-    //     setForm(endereco)
-    // }
-    
-        
-    //     let cep = document.getElementById('cep')
-    //     if(cep){
-    //         cep.addEventListener('focusout', buscarCEP)
-    //     } 
-        
-   
     return (
-        <div>
+        <div className={Styles.forms}>
             <form onSubmit={submit} className={FormStyles.form_container}>
-                <Input
-                    text="Nome do produto"
+                <TextField
+                    size='small'
+                    label="Nome do produto"
                     type="text"
                     name="name"
                     placeholder="Digite o nome do produto"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.name || ''}
-                />
-                <Input
-                    text="Descrição"
+                /><br />
+                <TextareaAutosize
+                    minRows={4}
                     type="text"
                     name="description"
                     placeholder="Descrição"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.description || ''}
-                />
-                <Input
-                    text="Valor do droduto R$"
+                /><br />
+                <TextField
+                    size='small'
+                    label="Valor do droduto R$"
                     type="text"
                     name="price"
                     placeholder="Preço do produto R$"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.price || ''}
-                />
-                <Input
+                /><br />
+                <TextField
+                    size='small'
                     id="cep"
-                    text="CEP"
+                    label="CEP"
                     type="text"
                     name="cep"
                     placeholder="CEP"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.cep || ''}
-                />
-                <Input
+                /><br />
+                <TextField
+                    size='small'
                     id="cidade"
-                    text="Cidade"
+                    label="Cidade"
                     type="text"
                     name="city"
                     placeholder="Cidade"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.city || ''}
-                />
-                <Input
+                /><br />
+                <TextField
+                    size='small'
                     id="uf"
-                    text="UF"
+                    label="UF"
                     type="text"
                     name="uf"
                     placeholder="UF"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.uf || ''}
-                />
-                <Input
-                    text="Ano"
+                /><br />
+                <TextField
+                    size='small'
+                    label="Ano"
                     type="text"
                     name="year"
                     placeholder="Ano do veículo"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.year || ''}
-                />
-                <Input
-                    text="Km rodado"
+                /><br />
+                <TextField
+                    size='small'
+                    label="Km rodado"
                     type="text"
                     name="kms"
                     placeholder="Quilometros rodados"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.kms || ''}
-                />
-                <Input
-                    text="Motor"
+                /><br />
+                <TextField
+                    size='small'
+                    label="Motor"
                     type="text"
                     name="motor"
                     placeholder="Potência do motor"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.motor || ''}
-                />
-                <Input
-                    text="Combustível"
+                /><br />
+                <TextField
+                    size='small'
+                    label="Combustível"
                     type="text"
                     name="fuel"
                     placeholder="Tipo de combustível"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.fuel || ''}
-                />
-                <Input
-                    text="Documentação"
+                /><br />
+                <TextField
+                    size='small'
+                    label="Documentação"
                     type="text"
                     name="documents"
                     placeholder="Situação do documento"
-                    handleOnChange={handleChange}
+                    onChange={handleChange}
                     value={product.documents || ''}
-                />
-                <Input
-                    text="Imagens do produto"
+                /><br />
+                <div>
+                    <label htmlFor='files'> <IoCamera /> Escolher Fotos</label>
+                    <input
+                    id='files'
+                    size='small'
+                    label="Imagens do veículo"
                     type="file"
                     name="images"
-                    handleOnChange={onFileChange}
+                    onChange={onFileChange}
                     multiple={true}
                 />
-                <input type="submit" value={btnText} />
+                </div>
+                <br />
+                <Button type="submit" variant='contained' color='success'> {btnText} </Button>
             </form>
             <div className={Styles.images}>
                 {preview.length > 0 ?

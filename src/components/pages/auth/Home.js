@@ -27,6 +27,7 @@ function Home() {
                     {products.length > 0 && (
                         products.map((product) => (
                             <div className={Styles.product_card} key={product._id}>
+                                <Link to={`product/${product._id}`}>
                                 <div
                                     style={{
                                         backgroundImage:
@@ -34,6 +35,8 @@ function Home() {
                                     }}
                                     className={Styles.product_card_image}>
                                 </div>
+                                </Link>
+                                
                                 <div className={Styles.product_card_info}>
                                     <h3>{product.name}</h3>
                                     <p><FaFileAlt /> {product.documents}</p>

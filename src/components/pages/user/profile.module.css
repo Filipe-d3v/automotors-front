@@ -8,6 +8,7 @@
     background-color: #0CC0E4;
     border: solid 2px #0CC0E4;
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .profile a:hover{
@@ -26,9 +27,31 @@
    display: none;
 }
 
+.profile_container label {
+    font-size: xx-large;
+    color: #aaaaaa;
+    cursor: pointer;
+}
+
+.profile_container label:hover {
+    color: #2ca4db;
+    transition: .3s;
+}
+
 .profile form {
     width: 60%;
 }
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_container [type='submit']{
+    margin-top: 1.7em;
+}
+
+
 
 @media screen and (max-width: 640px) {
     .profile_info {

@@ -1,6 +1,9 @@
 import Styles from './profile.module.css'
-import FormStyles from '../../forms/form.module.css'
-import Input from '../../forms/Input'
+//import FormStyles from '../../forms/form.module.css'
+//import Input from '../../forms/Input'
+
+import { IoCamera } from 'react-icons/io5'
+import { Button, TextField } from '@mui/material'
 
 import api from '../../../utils/api'
 import { useState, useEffect } from 'react'
@@ -65,55 +68,63 @@ function Profile() {
                         <RoundedImage src={preview ? URL.createObjectURL(preview) :
                             `${process.env.REACT_APP_API}/images/users/${user.image}`} alt={user.name} />
                     )}
-                    <i>
-                        <Input
-                            id='btnImg'
+                    <div>
+                        <label htmlFor='photo'> <IoCamera /> </label>
+                        <input
+                            id='photo'
                             type='file'
-                            name='image'
-                            handleOnChange={onFileChange}
+                            name="image"
+                            handleChange={onFileChange}
                         />
-                    </i>
+
+                    </div>
                     <h3>{user.name}</h3>
                     <h4>{user.phone}</h4>
-                    
-            <Link to='/myshopping'>MINHAS COMPRAS</Link>
-                </div>
-                <form onSubmit={handleSubmit} className={FormStyles.form_container}>
 
-                    <Input
-                        text='Nome completo'
+                    <Link to='/product/myproducts'>MEUS VEÍCULOS</Link>
+                </div>
+                <form onSubmit={handleSubmit} className={Styles.form_container}>
+
+                    <TextField
+                        size="small"
+                        variant="outlined"
+                        label='Nome completo'
                         type='text'
                         name='name'
-                        handleOnChange={handleChange}
+                        onChange={handleChange}
                         value={user.name || ''}
-                    />
-                    <Input
-                        text='Telefone'
-                        type='text'
+                    /><br />
+                    <TextField
+                        size="small"
+                        label='Telefone'
+                        type="text"
                         name='phone'
-                        handleOnChange={handleChange}
+                        onChange={handleChange}
                         value={user.phone || ''}
-                    />
-                    <Input
-                        text='E-mail'
-                        type='email'
+                    /><br />
+                    <TextField
+                        size="small"
+                        label="E-mail"
+                        type="email"
                         name='email'
-                        handleOnChange={handleChange}
+                        onChange={handleChange}
                         value={user.email || ''}
-                    />
-                    <Input
-                        text='Senha'
+                    /><br />
+                    <TextField
+                        size="small"
+                        label="Senha"
                         type='password'
                         name='passwd'
-                        handleOnChange={handleChange}
-                    />
-                    <Input
-                        text='Confirmação da senha'
+                        onChange={handleChange}
+                    /><br />
+                    <TextField
+                        size="small"
+                        label="Confirmação da senha"
                         type='password'
                         name='confirmpasswd'
-                        handleOnChange={handleChange}
-                    />
-                    <input type='submit' value='Salvar' />
+                        onChange={handleChange}
+                    /><br />
+                    <Button type='submit' variant="contained" color='success'>salvar</Button>
                 </form>
             </div>
         </section>

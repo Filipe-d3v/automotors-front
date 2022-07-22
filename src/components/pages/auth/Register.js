@@ -1,10 +1,10 @@
 import {useContext, useState} from 'react';
-import Input from '../../forms/Input';
 
-import Styles from '../../forms/form.module.css'
+import Styles from './register.module.css'
 import { Link } from 'react-router-dom';
 
 import { Context } from '../../../context/UserContext';
+import { Button, TextField } from '@mui/material';
 
 function Register(){
     const [user, setUser] = useState({})
@@ -22,45 +22,48 @@ function Register(){
     
     return(
         <section className={Styles.form_container}>
-            <h1>Cadastro</h1>
-            <form onSubmit={handleSubmit}>
-            <Input
-                text='Nome'
+            <h1>Sign In</h1>
+            <TextField
+                size='small'
+                label='Nome'
                 type='text'
                 name='name'
                 placeholder='Digite o nome'
-                handleOnChange={handleChange}
-                />
-            <Input
-                text='Telefone'
+                onChange={handleChange}
+                /><br />
+            <TextField
+                size='small'
+                label='Telefone'
                 type='text'
                 name='phone'
                 placeholder='Digite o telefone'
-                handleOnChange={handleChange}
-                />
-            <Input
-                text='E-mail'
+                onChange={handleChange}
+                /><br />
+            <TextField
+                size='small'
+                label='E-mail'
                 type='email'
                 name='email'
                 placeholder='Digite o E-mail'
-                handleOnChange={handleChange}
-                />
-            <Input
-                text='Senha'
+                onChange={handleChange}
+                /><br />
+            <TextField
+                size='small'
+                label='Senha'
                 type='password'
                 name='passwd'
                 placeholder='Digite a Senha'
-                handleOnChange={handleChange}
-                />
-            <Input
-                text='Confirmação de senha'
+                onChange={handleChange}
+                /><br />
+            <TextField
+                size='small'
+                label='Confirmação de senha'
                 type='password'
                 name='confirmpasswd'
                 placeholder='Confirme a senha'
-                handleOnChange={handleChange}
-                />
-            <input type='submit' value='Cadastrar' />
-        </form>
+                onChange={handleChange}
+                /><br />
+            <Button onClick={handleSubmit} variant='contained' color='success' type='submit'>cadastrar</Button>
         <p>
         Já tem conta?<Link to='/login'>Clique aqui</Link>
         </p>

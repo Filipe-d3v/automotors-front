@@ -63,7 +63,7 @@ function ProductDetails() {
                         <h1>{product.name}</h1>
                     </div>
                     <div className={Styles.product_galeria}>
-                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        <div className={Styles.images} >
                             <div className={Styles.product_images}>
                                 {product.images.map((image, index) => (
                                     <img className='small_img'
@@ -83,7 +83,7 @@ function ProductDetails() {
 
                             <h4>Descrição:</h4>
                             <TextareaAutosize
-                                disabled='true'
+                                disabled={true}
                                 minRows='4'
                                 handleOnChange={handleChange}
                                 value={product.description || ''}
@@ -92,28 +92,28 @@ function ProductDetails() {
                             <TextField 
                                 size='small'
                                 label='Documentação e Km rodado '
-                                disabled='true'
+                                disabled={true}
                                 handleChange={handleChange}
                                 value={product.documents + "   " + product.kms}
                             /><br />
                             <TextField
                                 size='small'
                                 label='Cidade'
-                                disabled='true'
+                                disabled={true}
                                 handleChange={handleChange}
                                 value={product.city + "  " + product.uf}
                             /><br />
                             <TextField
                                 size='small'
                                 label='Motor'
-                                disabled='true' 
+                                disabled={true} 
                                 handleChange={handleChange}
                                 value={product.motor + "  " + product.fuel}
                             /> <br />
                             <TextField
                                 size='small'
                                 label='Vrlor R$'
-                                disabled='true' 
+                                disabled={true}
                                 handleChange={handleChange}
                                 value={product.price}
                             /><br />
@@ -125,6 +125,9 @@ function ProductDetails() {
 
                 </section>
             )}
+            <div className={Styles.product_info_owner}>
+                <h3>Informações do vendedor</h3>
+            </div>
         </>
     )
 }
